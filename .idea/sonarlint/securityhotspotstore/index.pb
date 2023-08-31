@@ -35,8 +35,6 @@ s
 Cdomain/src/main/java/com/example/domain/usecase/home/HomeUseCase.kt,4/6/468b3d5411534ea03389be2f1cf3201ac2b0c17f
 }
 Mdata/src/main/java/com/example/data/cashe/room/features/signup/dao/UserDao.kt,0/6/06120d1d61efebfba865848ba5d0f4b688e598c0
-‚
-Rdata/src/main/java/com/example/data/cashe/room/features/home/dao/MostPopularDao.kt,b/e/be7fc1d16e0789eb1e6738638e236a6e60acb152
 p
 @data/src/main/java/com/example/data/cashe/room/common/BaseDao.kt,5/1/512d8d294bee376f813723cbfed3eb05e862aca5
 {
@@ -71,8 +69,6 @@ q
 Adomain/src/main/java/com/example/domain/model/home/MostPopular.kt,1/5/15f4bdf5d75760bec44bf432d14d31e5f37bad2f
 €
 Papp/src/main/java/com/example/deloitetask/extensions/ProgressDialogExtensions.kt,3/f/3fe84ee6b6dc104cceafb96aa74c05e65a1107f4
-…
-Udomain/src/main/java/com/example/domain/usecase/home/GetFilteredMostPopularUseCase.kt,8/6/86f20301233a7547e9aba6c7e30738b86a34ce7e
 u
 Edomain/src/main/java/com/example/domain/usecase/login/LoginUseCase.kt,4/4/44bf3948b69bc7a1147cc399dc31926a9f71c6da
 o
@@ -95,8 +91,6 @@ t
 Ddata/src/main/java/com/example/data/network/common/NetworkFactory.kt,d/5/d5348200fd496def34c5e266b5bcb7ceaaa947cc
 v
 Fdata/src/main/java/com/example/data/network/common/NetworkConstants.kt,9/9/99e19bd512673c392c7cae17c01ee343497308c4
-~
-Ndomain/src/main/java/com/example/domain/repository/home/HomeLocalRepository.kt,3/b/3b1039424ae126ba5c5ee7ca344477f8e5bd2502
 Ž
 ^data/src/main/java/com/example/data/cashe/preferences/datastore/PreferencesDataStoreManager.kt,9/4/943b999c3a498903ae7d91f096eaf381b4c69a4d
 s
@@ -117,10 +111,6 @@ m
 =domain/src/main/java/com/example/domain/common/BaseUseCase.kt,2/e/2e04999fa340f676ce7ee7c81bc18613507ee887
 v
 Fdata/src/main/java/com/example/data/network/common/NetworkException.kt,2/9/29a745ef1fa1575f64d4dca85a0c744e4fd190fc
-}
-Mdomain/src/main/java/com/example/domain/extensions/NewtworkBoundExtensions.kt,9/6/96f5e7d7b08f4fe1026ae86223e14cd53e7d7429
-†
-Vdata/src/main/java/com/example/data/network/repository/home/HomeLocalRepositoryImpl.kt,d/a/da5b178ed7685a80fb3ce4ef4079b233003b73df
 r
 Bapp/src/main/java/com/example/deloitetask/common/BaseViewHolder.kt,2/f/2f625c8da7585ba16b2a3835c10d96364d7ff19a
 ‚
@@ -133,10 +123,6 @@ j
 Tdata/src/main/java/com/example/data/network/repository/signup/SignUpRepositoryImp.kt,d/3/d3f1ca5ed4702ed11fe7d1eb36d49eddfcf06130
 „
 Tapp/src/main/java/com/example/deloitetask/screens/main/ui/home/MostPopularAdapter.kt,6/5/65ac550f9d2725d278d7610e2a378565b9374b55
-‡
-Wapp/src/main/java/com/example/deloitetask/screens/main/ui/home/MostPopularViewHolder.kt,3/5/35f1759ed8f3853146e581a4faf2c43d08b0787d
-w
-Gdata/src/main/java/com/example/data/cashe/room/common/RoomRepository.kt,b/e/beaac6313245d7bf806a0a1c573bd8061990965f
 y
 Iapp/src/main/java/com/example/deloitetask/extensions/BindingExtensions.kt,d/7/d76ed0f09c7f0ad767dc37953a4c7320da8b0e26
 z
@@ -145,8 +131,6 @@ z
 Japp/src/main/java/com/example/deloitetask/extensions/EditTextExtensions.kt,f/7/f71ceb49997ec0381f8b79c1a36390d5d508cb05
 {
 Kapp/src/main/java/com/example/deloitetask/extensions/LifeCycleExtensions.kt,0/6/064aeba2274cde079bd7e697f3d7714ccd64086e
-t
-Ddata/src/main/java/com/example/data/cashe/room/common/RoomManager.kt,4/e/4ee41d0c7c0a2ceaa59d53edeae4d9aca3e3eb73
 n
 >data/src/main/java/com/example/data/network/api/ApiRequests.kt,4/8/48936827c126b73738da4fd561da86097693915e
 q
@@ -155,5 +139,3 @@ Adata/src/main/java/com/example/data/cashe/utils/RoomExtensions.kt,b/3/b3ebe8e9
 Ndata/src/main/java/com/example/data/network/extensions/ApiRequestExtensions.kt,e/a/eacbedda1904ab4254530bee5e5c852e22f0a221
 o
 ?data/src/main/java/com/example/data/network/home/HomeService.kt,f/8/f8541e341244ca189d2f38b7d4c12c5589bb76e8
-~
-Napp/src/main/java/com/example/deloitetask/screens/auth/login/LoginViewModel.kt,e/6/e6853ad172d06fcf0d899b86b5dc75f796fd06b4

@@ -8,7 +8,7 @@
     <string name="title_signup">انشاء حساب</string>
     <string name="title_email">بريد إلكتروني</string>
     <string name="label_password">كلمة المرور</string>
-
+    <string name="title_dashboard">لوحة القيادة</string>
     <string name="title_full_name">الاسم الكامل</string>
     <string name="title_national_id">الهوية الوطنية</string>
     <string name="title_phone_number">رقم الهاتف</string>
