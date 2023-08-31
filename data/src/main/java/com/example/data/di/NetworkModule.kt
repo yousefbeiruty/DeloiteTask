@@ -16,32 +16,25 @@ import javax.inject.Singleton
 object NetworkModule {
     @Singleton
     @Provides
-    fun provideApiDao(
-        retrofit: Retrofit
-    ): ApiRequests {
+    fun provideApiRequests(retrofit: Retrofit): ApiRequests {
         return NetworkFactory.create(retrofit)
     }
 
     @Singleton
     @Provides
-    fun provideOkHttpClient(
-    ): OkHttpClient {
+    fun provideOkHttpClient(): OkHttpClient {
         return NetworkFactory.getOkHttpClient()
     }
 
     @Singleton
     @Provides
-    fun provideRetrofit(
-        okHttpClient: OkHttpClient
-    ): Retrofit {
+    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return NetworkFactory.getRetrofit(okHttpClient)
     }
 
     @Singleton
     @Provides
-    fun provideApiManager(
-        services: ApiRequests
-    ): ApiManager {
+    fun provideApiManager(services: ApiRequests): ApiManager {
         return ApiManager(services)
     }
 

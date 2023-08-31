@@ -1,6 +1,6 @@
 package com.example.data.network.extensions
 
-import com.example.data.cashe.utils.ResultWrapper
+import com.example.domain.common.ResultWrapper
 import com.example.data.network.common.NetworkResult
 import com.example.data.network.home.model.ResultResponse
 import com.example.domain.model.home.MostPopular

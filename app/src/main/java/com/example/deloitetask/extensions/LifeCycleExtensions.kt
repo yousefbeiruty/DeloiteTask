@@ -34,7 +34,7 @@ fun <T> LifecycleOwner.collectLatest(sharedFlow: SharedFlow<T>, flow: (T) -> Uni
  * @param flow The observer that will receive the events.
  * @see StateFlow.collectLatest
  */
-fun <T> LifecycleOwner.collectLatest(stateFlow: SharedFlow<User?>, flow: (T) -> Unit) {
+fun <T> LifecycleOwner.collectLatest(stateFlow: StateFlow<T>, flow: (T) -> Unit) {
     lifecycleScope.launch {
         stateFlow.collectLatest {
             flow(it)

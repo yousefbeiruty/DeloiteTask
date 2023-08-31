@@ -3,7 +3,7 @@ package com.example.data.cashe.room.common
 import com.example.data.cashe.manager.BaseRepository
 import com.example.data.cashe.room.features.home.entities.MostPopularEntity
 import com.example.data.cashe.room.features.signup.entities.UserEntity
-import com.example.data.cashe.utils.ResultWrapper
+import com.example.domain.common.ResultWrapper
 import com.example.data.cashe.utils.safeLocalDataCall
 import javax.inject.Inject
 

@@ -1,22 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".screens.main.ui.home.HomeFragment">
+<layout>
+    <data>
 
-    <TextView
-        android:id="@+id/text_home"
+        <import type="java.util.ArrayList" />
+
+        <variable
+            name="viewModel"
+            type="com.example.deloitetask.screens.main.ui.home.HomeViewModel" />
+
+        <variable
+            name="adapter"
+            type="com.example.deloitetask.screens.main.ui.home.MostPopularAdapter" />
+
+        <variable
+            name="mostPopulars"
+            type="ArrayList&lt;com.example.domain.model.home.MostPopular&gt;" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/refreshLayoutParkingAvailability"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="match_parent"
+        app:refreshing="@{viewModel.isPullToRefresh}"
+        app:layout_constraintBottom_toTopOf="@+id/textLastUpdated"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayoutParkingAvailability"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:context=".presentations.home.HomeFragment">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    android:text="@string/data"
+                    android:layout_margin="@dimen/_16sdp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/textView"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tint="@color/black"
+                    android:src="@drawable/ic_sort"
+                    app:layout_constraintTop_toTopOf="@+id/textViewSort"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewSort"
+                    android:id="@+id/appCompatImageView"
+                    app:layout_constraintEnd_toStartOf="@+id/textViewSort" />
+
+                <TextView
+                    android:id="@+id/textViewSort"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    android:text="@string/sort"
+                    android:layout_margin="@dimen/_16sdp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/mSearchEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_16sdp"
+                    android:background="@drawable/shape_search_edit_text"
+                    android:drawableStart="@drawable/ic_search"
+                    android:drawablePadding="@dimen/_16sdp"
+                    android:hint="@string/search"
+                    android:imeOptions="actionGo"
+                    android:padding="@dimen/_8sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewSort" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:adapter="@{adapter}"
+                    app:entry_list="@{mostPopulars}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="vertical"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintTop_toBottomOf="@+id/mSearchEditText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

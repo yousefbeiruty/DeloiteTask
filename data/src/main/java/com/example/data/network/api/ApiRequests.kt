@@ -1,5 +1,6 @@
 package com.example.data.network.api
 
+import dagger.hilt.android.lifecycle.HiltViewModel
 import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.GET

@@ -8,10 +8,8 @@ import javax.inject.Inject
 class HomeService @Inject constructor(private val apiManager: ApiManager) {
 
     companion object {
-
         private const val API_KEY = "api-key"
-        private const val PATH_EVENT_DETAILS =
-            "svc/mostpopular/v2/viewed/30.json"
+        private const val PATH_EVENT_DETAILS = "svc/mostpopular/v2/viewed/30.json"
     }
 
     suspend fun getMostPopular(key: String): NetworkResult<MostPopularResponse> {

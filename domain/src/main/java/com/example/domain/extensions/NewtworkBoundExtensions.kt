@@ -1,5 +1,6 @@
 package com.example.domain.extensions
 
+
 import com.example.domain.common.ResultException
 import com.example.domain.common.ResultWrapper
 import kotlinx.coroutines.flow.Flow

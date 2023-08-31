@@ -7,11 +7,9 @@ object RoomClient {
 
     fun createDatabaseRoom(
         context: Context
-    ): DatabaseRoom {
-        return  Room
-            .databaseBuilder(context, DatabaseRoom::class.java, RoomConstants.DATABASE_NAME)
-            .allowMainThreadQueries()
-            .build()
-    }
+    ): DatabaseRoom = Room
+        .databaseBuilder(context, DatabaseRoom::class.java, RoomConstants.DATABASE_NAME)
+        .allowMainThreadQueries()
+        .build()
 
 }

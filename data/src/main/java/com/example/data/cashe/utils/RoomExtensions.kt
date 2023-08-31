@@ -1,6 +1,8 @@
 package com.example.data.cashe.utils
 
 import com.example.data.R
+import com.example.domain.common.ResultException
+import com.example.domain.common.ResultWrapper
 
 /**
  * Use this function to handle try, catch queries and mapping the result to ResultWrapper

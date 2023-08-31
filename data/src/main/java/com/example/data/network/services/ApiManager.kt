@@ -7,10 +7,7 @@ import com.example.data.network.extensions.map
 import com.example.data.network.extensions.safeApiCall
 import javax.inject.Inject
 
-class ApiManager @Inject constructor(
-    val services: ApiRequests,
-) {
-
+class ApiManager @Inject constructor(val services: ApiRequests) {
     suspend inline fun <reified T> getRequest(
         url: String,
         headersMap: Map<String, String>? = mapOf(),

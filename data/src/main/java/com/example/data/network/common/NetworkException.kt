@@ -1,7 +1,7 @@
 package com.example.data.network.common
 
 import com.example.data.R
-import com.example.data.cashe.utils.ResultException
+import com.example.domain.common.ResultException
 
 open class NetworkException(
     messageResource: Int = R.string.error_unexpected,

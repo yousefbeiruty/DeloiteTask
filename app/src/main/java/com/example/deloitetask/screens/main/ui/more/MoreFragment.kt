@@ -43,7 +43,7 @@ class MoreFragment : BaseFragment<FragmentMoreBinding, MoreViewModel>(R.layout.f
                 requireActivity().finish()
             }
             is MoreViewState.NavigateToSettings -> {
-                findNavController().navigate(MoreFragmentDirections.actionHomeFragmentToSettingFragment())
+              //  findNavController().navigate(MoreFragmentDirections.actionHomeFragmentToSettingFragment())
             }
             else -> {}
         }
