@@ -1,39 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.DeloiteTask" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-<!--        <item name="android:windowBackground">@drawable/splash_screen_background</item>-->
+    <style name="Theme.DeloiteTask" parent="Theme.Material3.Light">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple</item>
+        <item name="colorPrimaryVariant">@color/purple</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/purple</item>
+        <item name="colorSecondaryVariant">@color/purple</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+
     </style>
 
-    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-        <item name="boxStrokeWidth">1dp</item>
-        <item name="boxCornerRadiusBottomEnd">@dimen/_8sdp</item>
-        <item name="boxCornerRadiusBottomStart">@dimen/_8sdp</item>
-        <item name="boxCornerRadiusTopEnd">@dimen/_8sdp</item>
-        <item name="boxCornerRadiusTopStart">@dimen/_8sdp</item>
-        <item name="boxBackgroundColor">@android:color/transparent</item>
-        <item name="boxBackgroundMode">outline</item>
-    </style>
 
-    <style name="BottomNavigationView.Active" parent="@style/TextAppearance.AppCompat.Caption">
-        <item name="android:textSize">12sp</item>
-    </style>
-    <style name="BottomNavigationView.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
-        <item name="android:color">@android:color/transparent</item>
-    </style>
-    <style name="BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
-        <item name="android:textSize">11sp</item>
-    </style>
-
-    <style name="Theme.DeloiteTask" parent="Base.Theme.DeloiteTask" />
-
-    <style name="Theme.DeloiteTask.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
-    <style name="Theme.DeloiteTask.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="Theme.DeloiteTask.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

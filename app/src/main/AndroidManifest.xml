@@ -18,10 +18,11 @@
             android:name=".screens.auth.AuthActivity"
             android:exported="false"
             android:label="@string/title_activity_auth"
-            android:theme="@style/Theme.DeloiteTask.NoActionBar" />
+            android:theme="@style/Theme.DeloiteTask" />
         <activity
             android:name=".screens.main.MainActivity"
             android:exported="false"
+            android:theme="@style/Theme.DeloiteTask"
             android:label="@string/title_activity_main" />
         <activity
             android:name=".screens.splash.SplashActivity"

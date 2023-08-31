@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.deloitetask.R
 import com.example.deloitetask.common.BaseFragment
 import com.example.deloitetask.databinding.FragmentMoreBinding
@@ -43,7 +44,7 @@ class MoreFragment : BaseFragment<FragmentMoreBinding, MoreViewModel>(R.layout.f
                 requireActivity().finish()
             }
             is MoreViewState.NavigateToSettings -> {
-              //  findNavController().navigate(MoreFragmentDirections.actionHomeFragmentToSettingFragment())
+                findNavController().navigate(R.id.action_homeFragment_to_settingFragment)
             }
             else -> {}
         }

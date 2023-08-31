@@ -95,6 +95,7 @@
                     android:layout_height="wrap_content"
                     android:adapter="@{adapter}"
                     app:entry_list="@{mostPopulars}"
+                    android:paddingBottom="@dimen/_50sdp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     android:orientation="vertical"
                     android:nestedScrollingEnabled="false"
