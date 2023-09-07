@@ -78,6 +78,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
         this.mostPopulars =
             mostPopulars?.toCollection(ArrayList())
         viewBinding?.mostPopulars = this.mostPopulars
+
     }
 
 }
