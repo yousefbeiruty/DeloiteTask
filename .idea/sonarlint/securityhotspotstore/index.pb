@@ -139,3 +139,11 @@ Adata/src/main/java/com/example/data/cashe/utils/RoomExtensions.kt,b/3/b3ebe8e9
 Ndata/src/main/java/com/example/data/network/extensions/ApiRequestExtensions.kt,e/a/eacbedda1904ab4254530bee5e5c852e22f0a221
 o
 ?data/src/main/java/com/example/data/network/home/HomeService.kt,f/8/f8541e341244ca189d2f38b7d4c12c5589bb76e8
+@
+app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
+P
+ app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
+<
+build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
+
+Oapp/src/main/java/com/example/deloitetask/screens/main/ui/home/HomeViewModel.kt,2/0/2034fb83d70cab9b587cf07680af82ad7457e97c

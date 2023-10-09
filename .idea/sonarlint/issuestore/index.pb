@@ -139,3 +139,11 @@ Japp/src/main/java/com/example/deloitetask/screens/main/ui/home/SortType.kt,2/4
 Napp/src/main/java/com/example/deloitetask/extensions/TextViewBindingAdapter.kt,f/c/fc4834115ecde10630da4aef63473d40dc3afa07
 j
 :app/src/main/java/com/example/deloitetask/di/ViewModule.kt,5/e/5e0e232cd5d7c7acd5b8f715db68c173e8aa8a9b
+P
+ app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
+
+Oapp/src/main/java/com/example/deloitetask/screens/main/ui/home/HomeViewModel.kt,2/0/2034fb83d70cab9b587cf07680af82ad7457e97c
+<
+build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
+@
+app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164

@@ -9,6 +9,7 @@ import android.os.Looper
 import androidx.activity.viewModels
 import com.example.deloitetask.R
 import com.example.deloitetask.common.BaseBindingActivity
+import com.example.deloitetask.compose.ComposeMainActivity
 import com.example.deloitetask.databinding.ActivityAuthBinding
 import com.example.deloitetask.databinding.ActivitySplashBinding
 import com.example.deloitetask.extensions.collectLatest
@@ -25,7 +26,11 @@ class SplashActivity : BaseBindingActivity<ActivitySplashBinding>(R.layout.activ
         viewModel.isUserLoggedIn()
         Looper.myLooper()?.let {
             Handler(it).postDelayed({
-                collectLatest(viewModel.navigateViewState, ::handleNavigation)
+               // collectLatest(viewModel.navigateViewState, ::handleNavigation)
+                val intent = Intent(this, ComposeMainActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
+                finish()
             }, 2000)
         }
     }
