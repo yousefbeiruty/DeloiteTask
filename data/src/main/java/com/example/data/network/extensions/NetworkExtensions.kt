@@ -2,6 +2,8 @@ package com.example.data.network.extensions
 
 import com.example.data.network.common.NetworkException
 import com.example.data.network.common.NetworkResult
+import com.example.data.network.movie.model.ResponseDto
+import com.example.navigationtutorial.model.MoviesListResponse
 import retrofit2.HttpException
 import retrofit2.Response
 
@@ -12,6 +14,18 @@ inline fun <T> safeApiCall(
         val response = apiCall()
         if (! response.isSuccessful) {
             throw HttpException(response)
+        }
+        response
+    }.toNetworkResult()
+}
+
+inline fun safeApiCallList(
+    apiCall: () -> Response<MoviesListResponse>
+): NetworkResult<Response<MoviesListResponse>> {
+    return runCatching {
+        val response = apiCall()
+        if ( response!=null) {
+          //  throw HttpException(response)
         }
         response
     }.toNetworkResult()
@@ -46,4 +60,6 @@ fun Throwable.parseErrorResponse() = mapApiError(this)
 
 private fun mapApiError(error: Throwable): NetworkException =
     NetworkException(cause = error)
+
+
 

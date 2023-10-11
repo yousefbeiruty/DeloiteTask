@@ -1,6 +1,6 @@
 package com.example.data.network.api
 
-import dagger.hilt.android.lifecycle.HiltViewModel
+import com.example.navigationtutorial.model.MoviesListResponse
 import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.GET
@@ -16,4 +16,9 @@ interface ApiRequests {
         @HeaderMap headersMap: Map<String, String>? = mapOf(),
         @QueryMap queryParamsMap: Map<String, Any?>? = mapOf(),
     ): Response<ResponseBody>
+
+    @GET
+    suspend fun getMovies(
+        @Url url: String,
+    ): Response<MoviesListResponse>
 }

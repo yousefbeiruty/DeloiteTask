@@ -4,6 +4,8 @@ import com.example.domain.common.ResultWrapper
 import com.example.data.network.common.NetworkResult
 import com.example.data.network.home.model.ResultResponse
 import com.example.domain.model.home.MostPopular
+import com.example.domain.model.movie.Movie
+import com.example.navigationtutorial.model.MoviesListResponse
 
 inline fun <DATA, DOMAIN> tryRequest(
     request: () -> NetworkResult<DATA>,
@@ -39,4 +41,31 @@ internal fun List<ResultResponse>.toMostPopular(): List<MostPopular> {
         )
     }
     return mostPopularList
+}
+
+internal fun List<MoviesListResponse.Result>.toMovie():List<Movie>{
+    val movies= arrayListOf<Movie>()
+
+    this.forEach{
+        movies.add(
+            Movie(
+                id=it.id,
+               title= it.title,
+               originalTitle=it.originalTitle,
+         originalLanguage=it.originalLanguage,
+         adult=it.adult,
+       backdropPath=it.backdropPath,
+         genreIds=it.genreIds,
+         overview=it.overview,
+         popularity=it.popularity,
+         posterPath=it.posterPath,
+         releaseDate=it.releaseDate,
+         video=it.video,
+         voteAverage=it.voteAverage,
+         voteCount=it.voteCount
+            )
+
+        )
+    }
+    return movies
 }

@@ -5,12 +5,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.sp
 import androidx.compose.material.*
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.res.painterResource
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.deloitetask.R
+import com.example.deloitetask.compose.ui.theme.myColors
 
 @Composable
 fun BottomNavigation(navController: NavController) {
@@ -34,8 +36,8 @@ fun BottomNavigation(navController: NavController) {
                 },
                 label = { Text(text = item.title,
                     fontSize = 9.sp) },
-                selectedContentColor = Color.Black,
-                unselectedContentColor = Color.Black.copy(0.4f),
+                selectedContentColor = MaterialTheme.myColors.Black,
+                unselectedContentColor = MaterialTheme.myColors.Black.copy(0.4f),
                 alwaysShowLabel = true,
                 selected = currentRoute == item.screen_route,
                 onClick = {

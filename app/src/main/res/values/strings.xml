@@ -39,4 +39,6 @@
     <string name="descending">Descending</string>
     <string name="ascending">Ascending</string>
     <string name="title_activity_compose_main">ComposeMainActivity</string>
+    <string name="strRetry">Retry</string>
+    <string name="strFetchingDataFromServer">Fetch data from server\n</string>
 </resources>
