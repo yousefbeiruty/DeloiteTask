@@ -15,32 +15,32 @@ data class MoviesListResponse(
 ) {
     data class Result(
         @SerializedName("adult")
-        val adult: Boolean, // false
+        val adult: Boolean?=null, // false
         @SerializedName("backdrop_path")
-        val backdropPath: String, // /wcKFYIiVDvRURrzglV9kGu7fpfY.jpg
+        val backdropPath: String?=null, // /wcKFYIiVDvRURrzglV9kGu7fpfY.jpg
         @SerializedName("genre_ids")
-        val genreIds: List<Int>,
+        val genreIds: List<Int>?=null,
         @SerializedName("id")
-        val id: Int, // 453395
+        val id: Int?=null, // 453395
         @SerializedName("original_language")
-        val originalLanguage: String, // en
+        val originalLanguage: String?=null, // en
         @SerializedName("original_title")
-        val originalTitle: String, // Doctor Strange in the Multiverse of Madness
+        val originalTitle: String?=null, // Doctor Strange in the Multiverse of Madness
         @SerializedName("overview")
-        val overview: String, // Doctor Strange, with the help of mystical allies both old and new, traverses the mind-bending and dangerous alternate realities of the Multiverse to confront a mysterious new adversary.
+        val overview: String?=null, // Doctor Strange, with the help of mystical allies both old and new, traverses the mind-bending and dangerous alternate realities of the Multiverse to confront a mysterious new adversary.
         @SerializedName("popularity")
-        val popularity: Double, // 7931.499
+        val popularity: Double?=null, // 7931.499
         @SerializedName("poster_path")
-        val posterPath: String, // /9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg
+        val posterPath: String?=null, // /9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg
         @SerializedName("release_date")
-        val releaseDate: String, // 2022-05-04
+        val releaseDate: String?=null, // 2022-05-04
         @SerializedName("title")
-        val title: String, // Doctor Strange in the Multiverse of Madness
+        val title: String?=null, // Doctor Strange in the Multiverse of Madness
         @SerializedName("video")
-        val video: Boolean, // false
+        val video: Boolean?=null, // false
         @SerializedName("vote_average")
-        val voteAverage: Double, // 7.5
+        val voteAverage: Double?=null, // 7.5
         @SerializedName("vote_count")
-        val voteCount: Int // 3987
+        val voteCount: Int?=null // 3987
     )
 }

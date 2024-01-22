@@ -8,10 +8,10 @@ import com.example.navigationtutorial.model.MoviesListResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
+import java.util.Stack
 import javax.inject.Inject
 
 class MovieService @Inject constructor(private val apiManager: ApiManager) {
-
     companion object {
         private const val KEY = "9e851da311d976ec3754a43b0185bc8c"
         private const val API_KEY = "api_key"

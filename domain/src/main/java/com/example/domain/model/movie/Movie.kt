@@ -1,18 +1,18 @@
 package com.example.domain.model.movie
 
 data class Movie(
-        val id: Int,
-        val title: String,
-        val originalTitle: String,
-        val originalLanguage: String,
-        val adult: Boolean,
-        val backdropPath: String,
-        val genreIds: List<Int>,
-        val overview: String,
-        val popularity: Double,
-        val posterPath: String,
-        val releaseDate: String,
-        val video: Boolean,
-        val voteAverage: Double,
-        val voteCount: Int
+        val id: Int?=null,
+        val title: String?=null,
+        val originalTitle: String?=null,
+        val originalLanguage: String?=null,
+        val adult: Boolean?=null,
+        val backdropPath: String?=null,
+        val genreIds: List<Int>?=null,
+        val overview: String?=null,
+        val popularity: Double?=null,
+        val posterPath: String?=null,
+        val releaseDate: String?=null,
+        val video: Boolean?=null,
+        val voteAverage: Double?=null,
+        val voteCount: Int?=null
     )

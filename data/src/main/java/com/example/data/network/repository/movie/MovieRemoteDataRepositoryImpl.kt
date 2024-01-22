@@ -13,12 +13,10 @@ class MovieRemoteDataRepositoryImpl @Inject constructor(
 ) : MovieRemoteDataRepository {
     override suspend fun getMovies(pageNumber: Int): List<Movie>? {
          val data=api.getMostPopular("",pageNumber,"popularity.desc")
-         var  movie=MoviesListResponse()
-        var list= arrayListOf<Movie>()
+         println("API Response: $data")
+         val list= ArrayList<Movie>()
         data.map {
-            if (it != null) {
-                list= it.toMovie() as ArrayList<Movie>
-            }
+          return  it?.toMovie()
         }
         return list
     }

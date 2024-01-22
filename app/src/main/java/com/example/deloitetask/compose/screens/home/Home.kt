@@ -63,6 +63,8 @@ import coil.compose.AsyncImagePainter
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import com.example.deloitetask.R
+import com.example.deloitetask.compose.bottomnav.Screen
+import com.example.deloitetask.compose.sharViewModel.SharedViewModel
 import com.example.deloitetask.utils.ErrorMessage
 import com.example.deloitetask.utils.LoadingNextPageItem
 import com.example.deloitetask.utils.POSTER_BASE_URL
@@ -72,61 +74,19 @@ import kotlin.math.roundToInt
 
 @Composable
 fun HomeScreen(navController: NavController,
-               viewModel: HomeViewMode = hiltViewModel()
+               viewModel: HomeViewMode = hiltViewModel(),
+               sharedViewModel: SharedViewModel= hiltViewModel()
 ) {
     val moviePagingItems: LazyPagingItems<Movie> = viewModel.moviesState.collectAsLazyPagingItems()
-    listofMovies(movies = moviePagingItems,"")
-//        LazyColumn(
-//
-//        ) {
-//            item { Spacer(modifier = Modifier.padding(4.dp)) }
-//            items(moviePagingItems.itemCount) { index ->
-//                ItemMovie(
-//                    itemEntity = moviePagingItems[index]!!,
-//                    onClick = {
-//                       // navController.navigate(AppScreen.DetailsScreen.route)
-//                    }
-//                )
-//            }
-//            moviePagingItems.apply {
-//                when {
-//                    loadState.refresh is LoadState.Loading -> {
-//                        item { PageLoader(modifier = Modifier.fillParentMaxSize()) }
-//                    }
-//
-//                    loadState.refresh is LoadState.Error -> {
-//                        val error = moviePagingItems.loadState.refresh as LoadState.Error
-//                        item {
-//                            ErrorMessage(
-//                                modifier = Modifier.fillParentMaxSize(),
-//                                message = error.error.localizedMessage!!,
-//                                onClickRetry = { retry() })
-//                        }
-//                    }
-//
-//                    loadState.append is LoadState.Loading -> {
-//                        item { LoadingNextPageItem(modifier = Modifier) }
-//                    }
-//
-//                    loadState.append is LoadState.Error -> {
-//                        val error = moviePagingItems.loadState.append as LoadState.Error
-//                        item {
-//                            ErrorMessage(
-//                                modifier = Modifier,
-//                                message = error.error.localizedMessage!!,
-//                                onClickRetry = { retry() })
-//                        }
-//                    }
-//                }
-//            }
-//            item { Spacer(modifier = Modifier.padding(4.dp)) }
-//        }
+    listofMovies(movies = moviePagingItems,"",navController,sharedViewModel)
 }
 
 @Composable
 private fun listofMovies(
     movies: LazyPagingItems<Movie>,
-    searchText: String
+    searchText: String,
+    navController: NavController,
+    sharedViewModel: SharedViewModel
 ) {
     LazyRow(
         modifier = Modifier
@@ -139,7 +99,7 @@ private fun listofMovies(
             it?.originalTitle?.startsWith(searchText, ignoreCase = true) == true
         }.count()) { index ->
             Box(contentAlignment = Alignment.Center) {
-                CardDemo(movies[index])
+                CardDemo(movies[index],navController,sharedViewModel)
             }
         }
 
@@ -178,11 +138,14 @@ private fun listofMovies(
     }
 }
 @Composable
-fun CardDemo(obj: Movie?) {
+fun CardDemo(obj: Movie?, navController: NavController, sharedViewModel: SharedViewModel) {
     Card(
         modifier = Modifier
             .padding(5.dp)
-            .clickable { },
+            .clickable {
+                obj?.let { sharedViewModel.setMovieDetails(it) }
+                navController.navigate(Screen.MovieDetailsScreen.route)
+                       },
         elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
         colors = CardDefaults.cardColors(Color.White)
     ) {
@@ -254,7 +217,8 @@ fun NetworkImage(url: String, contentDescription: String?, width: Int, height: I
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .width(width.dp)
-                .height(height.dp).offset {
+                .height(height.dp)
+                .offset {
                     IntOffset(
                         x = (width * scrollState.value / (scrollState.maxValue - scrollState.value) * 0.5f).roundToInt(),
                         y = 0
@@ -326,7 +290,7 @@ fun ItemMovie(
             }
 
             Text(
-                text = itemEntity.title,
+                text = itemEntity.title.toString(),
                 color = MaterialTheme.colorScheme.onBackground,
                 style = MaterialTheme.typography.titleMedium,
                 maxLines = 1,
@@ -340,7 +304,7 @@ fun ItemMovie(
             Spacer(modifier = Modifier.padding(vertical = 4.dp))
 
             Text(
-                text = itemEntity.overview,
+                text = itemEntity.overview.toString(),
                 modifier = Modifier
                     .padding(horizontal = 16.dp)
                     .padding(bottom = 8.dp),
